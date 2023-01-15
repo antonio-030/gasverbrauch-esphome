@@ -36,7 +36,7 @@ ESPHome ist eine Open-Source-Software, die es ermöglicht, ESP8266 und ESP32-bas
 5. Füge einen Reed-Kontakt-Sensor hinzu und konfiguriere ihn mit den richtigen Pins für die Verbindung zum WeMos D1 Mini ESP8266.
 
 Fügen sie denn code am Ende Ihrer YAML-Konfigurationsdateien hinzu.  
-````
+```
 captive_portal:
 globals:
   - id: total_pulses
@@ -78,7 +78,7 @@ output:
   - platform: gpio
     pin: GPIO0
     id: 'led'	
-````  
+```  
 Dieser Code besteht aus 3 Hauptteilen:
 
     Definition einer globalen Variable: Eine globale Variable mit dem Namen "total_pulses" wird definiert. Sie hat den Typ Integer und wird mit dem Wert 0 initialisiert. Sie wird nicht automatisch auf einen früheren Wert zurückgesetzt, wenn das System neu gestartet wird.
