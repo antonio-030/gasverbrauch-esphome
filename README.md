@@ -1,2 +1,2 @@
 # gasverbrauch-esphome
-Gasverbrauch in ESPHome und Home Assistend 
+Gasverbrauch in ESPHome und Home Assistant 
