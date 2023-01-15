@@ -22,10 +22,15 @@ ESPHome ist eine Open-Source-Software, die es ermöglicht, ESP8266 und ESP32-bas
 
 4. Erstelle ein neues Projekt und wähle den WeMos D1 Mini ESP8266 als Gerät aus.
 
+![esphome!](antonio-030/gasverbrauch-esphome/bilder/esphome-newDevice.jpg)
+
 5. Füge einen Reed-Kontakt-Sensor hinzu und konfiguriere ihn mit den richtigen Pins für die Verbindung zum WeMos D1 Mini ESP8266.
 
 6. Kompiliere und flashe das Projekt auf den WeMos D1 Mini ESP8266.
 
 7. Stelle sicher, dass der WeMos D1 Mini ESP8266 mit dem WLAN verbunden ist und in der ESPhome-App sichtbar ist.
 
-8. Überprüfe die Echtzeitdaten und stelle sicher, dass der Reed-Kontakt-Sensor in ESPhome erfolgreich registriert wurde.
+8. Überprüfe die Echtzeitdaten unter LOGS und stelle sicher, dass der Reed-Kontakt-Sensor in ESPhome erfolgreich registriert wurde.
+
+
+[def]: antonio-030/gasverbrauch-esphome/bilder/esphome-newDevice.jpg
