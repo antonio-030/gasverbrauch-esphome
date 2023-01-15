@@ -83,11 +83,11 @@ output:
 ```txt
 Dieser Code besteht aus 3 Hauptteilen:
 
-    Definition einer globalen Variable: Eine globale Variable mit dem Namen "total_pulses" wird definiert. Sie hat den Typ Integer und wird mit dem Wert 0 initialisiert. Sie wird nicht automatisch auf einen früheren Wert zurückgesetzt, wenn das System neu gestartet wird.
+1. Definition einer globalen Variable: Eine globale Variable mit dem Namen "total_pulses" wird definiert. Sie hat den Typ Integer und wird mit dem Wert 0 initialisiert. Sie wird nicht automatisch auf einen früheren Wert zurückgesetzt, wenn das System neu gestartet wird.
 
-    Einrichtung eines Binärsensors: Ein Binärsensor wird auf dem GPIO-Pin 5 eingerichtet. Der Sensor überwacht den Pin auf Impulssignale. Wenn ein Impuls erkannt wird, wird die Variable "total_pulses" um 1 erhöht. Es wird auch eine optionale LED-Steuerung eingerichtet, die die LED ein- und ausschaltet, wenn ein Impuls erkannt wird, um diesen visuell darzustellen.
+2. Einrichtung eines Binärsensors: Ein Binärsensor wird auf dem GPIO-Pin 5 eingerichtet. Der Sensor überwacht den Pin auf Impulssignale. Wenn ein Impuls erkannt wird, wird die Variable "total_pulses" um 1 erhöht. Es wird auch eine optionale LED-Steuerung eingerichtet, die die LED ein- und ausschaltet, wenn ein Impuls erkannt wird, um diesen visuell darzustellen.
 
-    Einrichtung eines Templatesensors: Ein Sensor wird eingerichtet, der die Variable "total_pulses" verwendet, um den Gesamtgasverbrauch in Kubikmetern zu berechnen. Der Sensor hat eine Klasse "total_increasing" und ein Icon "mdi:fire", die Berechnung wird mit 2 Nachkommastellen dargestellt und wird in der Home Assistant Benutzeroberfläche angezeigt.
+3. Einrichtung eines Templatesensors: Ein Sensor wird eingerichtet, der die Variable "total_pulses" verwendet, um den Gesamtgasverbrauch in Kubikmetern zu berechnen. Der Sensor hat eine Klasse "total_increasing" und ein Icon "mdi:fire", die Berechnung wird mit 2 Nachkommastellen dargestellt und wird in der Home Assistant Benutzeroberfläche angezeigt.
 
     Der Template-Sensor hat einen Namen "Gasverbrauch", eine Klasse "gas", eine Einheit "m³" und eine Klasse "total_increasing", was bedeutet, dass der Wert des Sensors sich mit der Zeit erhöhen wird. Der Sensor hat auch ein Icon "mdi:fire", welches eine Feuer-Grafik darstellt und die Berechnung wird mit 2 Nachkommastellen dargestellt. Die Berechnung des Gasverbrauchs erfolgt durch die Verwendung der lambda-Funktion, die die Variable "total_pulses" multipliziert mit 0.01, was bedeutet, dass jeder Impuls, der erfasst wird, als 0.01 Kubikmeter Gasverbrauch interpretiert wird.
 
