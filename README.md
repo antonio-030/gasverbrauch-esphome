@@ -22,7 +22,7 @@ ESPHome ist eine Open-Source-Software, die es ermöglicht, ESP8266 und ESP32-bas
 
 4. Erstelle ein neues Projekt und wähle den WeMos D1 Mini ESP8266 als Gerät aus.
 
-![esphome!](antonio-030/gasverbrauch-esphome/bilder/esphome-newDevice.jpg)
+![esphome!](/bilder/esphome-newDevice.jpg)
 
 5. Füge einen Reed-Kontakt-Sensor hinzu und konfiguriere ihn mit den richtigen Pins für die Verbindung zum WeMos D1 Mini ESP8266.
 
