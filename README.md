@@ -98,5 +98,4 @@ In der Zusammenfassung, der Code zählt die Impulse die von einem Gaszähler kom
 
 ![esphome-logsGas!](/bilder/esphome-logsGas.jpg)
 
-
-[def]: antonio-030/gasverbrauch-esphome/bilder/esphome-newDevice.jpg
+![home-assistant!](/bilder/gaszählerstand.jpg)
