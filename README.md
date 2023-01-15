@@ -80,7 +80,7 @@ output:
     id: 'led'	
 ```
 
-```txt
+
 Dieser Code besteht aus 3 Hauptteilen:
 
 1. Definition einer globalen Variable: Eine globale Variable mit dem Namen "total_pulses" wird definiert. Sie hat den Typ Integer und wird mit dem Wert 0 initialisiert. Sie wird nicht automatisch auf einen früheren Wert zurückgesetzt, wenn das System neu gestartet wird.
@@ -92,7 +92,7 @@ Dieser Code besteht aus 3 Hauptteilen:
     Der Template-Sensor hat einen Namen "Gasverbrauch", eine Klasse "gas", eine Einheit "m³" und eine Klasse "total_increasing", was bedeutet, dass der Wert des Sensors sich mit der Zeit erhöhen wird. Der Sensor hat auch ein Icon "mdi:fire", welches eine Feuer-Grafik darstellt und die Berechnung wird mit 2 Nachkommastellen dargestellt. Die Berechnung des Gasverbrauchs erfolgt durch die Verwendung der lambda-Funktion, die die Variable "total_pulses" multipliziert mit 0.01, was bedeutet, dass jeder Impuls, der erfasst wird, als 0.01 Kubikmeter Gasverbrauch interpretiert wird.
 
 In der Zusammenfassung, der Code zählt die Impulse die von einem Gaszähler kommen und speichert diese in einer globalen Variable. Diese Variable wird dann verwendet um den Gasverbrauch in Kubikmetern zu berechnen und anzuzeigen. Es gibt auch eine optionale LED-Steuerung, die die LED ein- und ausschaltet, wenn ein Impuls erkannt wird, um diesen visuell darzustellen.
-```
+
 6. Kompiliere und flashe das Projekt auf den WeMos D1 Mini ESP8266.
 
 7. Stelle sicher, dass der WeMos D1 Mini ESP8266 mit dem WLAN verbunden ist und in der ESPhome-App sichtbar ist.
