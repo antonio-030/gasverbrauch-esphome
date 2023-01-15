@@ -98,6 +98,24 @@ In der Zusammenfassung, der Code zählt die Impulse die von einem Gaszähler kom
 
 ![esphome-logsGas!](/bilder/esphome-logsGas.jpg)
 
-<h3 align="center">"Home Assistant"</h3>
+<h2 align="center">"Home Assistant"</h2>
 
 ![home-assistant!](/bilder/gaszählerstand.jpg)
+
+````yaml
+  - platform: template 
+    sensors:
+      # Gaszähler, kommend von ESPHome, aufbereiten für Energy
+      gasincubicmeter:
+        value_template: >
+          {% if states('sensor.gasverbrauch') | float == 0 %}
+           {{ states('sensor.gasincubicmeter') }}
+          {% else %}
+           {{ states('sensor.gasverbrauch') | float }}
+          {% endif %}
+        unit_of_measurement: m³
+        device_class: gas
+        attribute_templates:
+          state_class: total_increasing
+````
+Dieser Code definiert einen weiteren Template-Sensor, der den Gasverbrauch in Kubikmetern anzeigt. Der Sensor hat einen Namen "gasincubicmeter" und verwendet eine Bedingung, um zu entscheiden, welchen Wert er verwendet, um den Gasverbrauch anzuzeigen. Wenn der Wert des Sensors "sensor.gasverbrauch" gleich 0 ist, wird der Wert des Sensors "sensor.gasincubicmeter" verwendet. Andernfalls wird der Wert des Sensors "sensor.gasverbrauch" verwendet. Der Sensor hat auch eine Einheit "m³" und eine Klasse "gas" und eine Klasse "total_increasing" und zeigt den Wert des Sensors entsprechend an.          
