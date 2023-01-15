@@ -20,9 +20,12 @@ Gasverbrauch in ESPHome und Home Assistant
 
 ESPHome ist eine Open-Source-Software, die es ermöglicht, ESP8266 und ESP32-basierte Geräte in Home-Assistant einzubinden. ESPHome bietet eine einfache Methode, um die Firmware auf diesen Geräten zu erstellen und zu konfigurieren und ermöglicht die Verwendung von YAML-Konfigurationsdateien, um die Einrichtung von Sensoren, Aktoren und automatischen Regeln zu vereinfachen. Mit ESPHome können Sie auch die MQTT-Protokoll, das OTA-Firmware-Update und die Integration von Home-Assistant integrieren.
 
-4. Erstelle ein neues Projekt und wähle den WeMos D1 Mini ESP8266 als Gerät aus.
+4. Erstelle ein neues Gerät und wähle den WeMos D1 Mini ESP8266 als Gerät aus.
 
 ![esphome!](/bilder/esphome-newDevice.jpg)
+
+![esphome!](/bilder/esphome-create.jpg)
+
 
 5. Füge einen Reed-Kontakt-Sensor hinzu und konfiguriere ihn mit den richtigen Pins für die Verbindung zum WeMos D1 Mini ESP8266.
 
