@@ -22,11 +22,11 @@ Gasverbrauch in ESPHome und Home Assistant
 
 ![reedkontakt!](/bilder/reedkontakt_Steckplatine.jpg)
 
-3. Installieren Sie [ESPHome](https://esphome.io/guides/getting_started_hassio.html) in Home-Assistant und fügen sie denn Code am Ende Ihrer YAML-Konfigurationsdateien hinzu.  
+3. Installieren Sie [ESPHome](https://esphome.io/guides/getting_started_hassio.html) in Home-Assistant.  
 
 ESPHome ist eine Open-Source-Software, die es ermöglicht, ESP8266 und ESP32-basierte Geräte in Home-Assistant einzubinden. ESPHome bietet eine einfache Methode, um die Firmware auf diesen Geräten zu erstellen und zu konfigurieren und ermöglicht die Verwendung von YAML-Konfigurationsdateien, um die Einrichtung von Sensoren, Aktoren und automatischen Regeln zu vereinfachen. Mit ESPHome können Sie auch die MQTT-Protokoll, das OTA-Firmware-Update und die Integration von Home-Assistant integrieren.
 
-4. Erstelle ein neues Gerät und wähle den WeMos D1 Mini ESP8266 als Gerät aus.
+4. Erstelle ein neues Gerät und wähle den ESP8266 als Gerät aus.
 
 ![esphome!](/bilder/esphome-newDevice.jpg)
 
@@ -35,6 +35,49 @@ ESPHome ist eine Open-Source-Software, die es ermöglicht, ESP8266 und ESP32-bas
 
 5. Füge einen Reed-Kontakt-Sensor hinzu und konfiguriere ihn mit den richtigen Pins für die Verbindung zum WeMos D1 Mini ESP8266.
 
+````
+captive_portal:
+globals:
+  - id: total_pulses
+    type: int
+    restore_value: false
+    initial_value: '0'  # hier kann der Gaszählerstand initialisiert werden
+  
+binary_sensor:
+  - platform: gpio
+    id: internal_pulse_counter
+    pin:
+      number: GPIO5
+      mode: INPUT_PULLUP
+    name: "Live-Impuls"
+    filters:
+      - delayed_on: 10ms
+    on_press:
+      then:
+        - lambda: id(total_pulses) += 1;
+        - output.turn_off: led  # optional: für eine LED, die den Gaszählerpuls visualisiert
+    on_release:
+      then:
+        - output.turn_on: led  # optional: für eine LED, die den Gaszählerpuls visualisiert
+
+sensor:
+  - platform: template
+    name: "Gasverbrauch"
+    device_class: gas
+    unit_of_measurement: "m³"
+    state_class: "total_increasing"
+    icon: "mdi:fire"
+    accuracy_decimals: 2
+    lambda: |-
+      return id(total_pulses) * 0.01;
+    
+           
+# Optional: Diese LED soll blinken, sobald ein Signal vom Gaszähler erkannt wird
+output:
+  - platform: gpio
+    pin: GPIO0
+    id: 'led'	
+````    
 6. Kompiliere und flashe das Projekt auf den WeMos D1 Mini ESP8266.
 
 7. Stelle sicher, dass der WeMos D1 Mini ESP8266 mit dem WLAN verbunden ist und in der ESPhome-App sichtbar ist.
