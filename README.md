@@ -14,6 +14,10 @@ Gasverbrauch in ESPHome und Home Assistant
 
 1. Besorge dir einen Reed-Kontakt-Sensor und einen WeMos D1 Mini ESP8266.
 
+![Wemos-D1!](/bilder/wemos-d1-mini-esp8266.jpg)
+
+![Wemos-D1!](/bilder/reed-kontakt.jpg)
+
 2.Verbinde den Reed-Kontakt-Sensor mit dem WeMos D1 Mini ESP8266 nach dem Schaltplan. In der Regel sind die Anschlüsse `D1 mit GND`, zu verbinden.
 
 3. Installieren Sie [ESPHome](https://esphome.io/guides/getting_started_hassio.html) in Home-Assistant und fügen sie denn Code am Ende Ihrer YAML-Konfigurationsdateien hinzu.  
