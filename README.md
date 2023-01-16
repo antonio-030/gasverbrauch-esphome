@@ -139,12 +139,13 @@ Füge den Code deiner ``configuration.yaml`` hinzu.
 ````
 Dieser Code definiert einen weiteren Template-Sensor, der den Gasverbrauch in Kubikmetern anzeigt. Der Sensor hat einen Namen "gasincubicmeter" und verwendet eine Bedingung, um zu entscheiden, welchen Wert er verwendet, um den Gasverbrauch anzuzeigen. Wenn der Wert des Sensors "sensor.gasverbrauch" gleich 0 ist, wird der Wert des Sensors "sensor.gasincubicmeter" verwendet. Andernfalls wird der Wert des Sensors "sensor.gasverbrauch" verwendet. Der Sensor hat auch eine Einheit "m³" und eine Klasse "gas" und eine Klasse "total_increasing" und zeigt den Wert des Sensors entsprechend an.   
 
-![home-assistant!](/bilder/home-assistant-Dashboards_gasincubicmeter.jpg)
 
-![home-assistant!](/bilder/home-assistant-Dashboards_gasverbrauch.jpg)
-
-![home-assistant!](/bilder/home-assistant-Dashboards_hinzuf%C3%BCgen.jpg)
+![home-assistant!](/bilder/home-assistantEnergie.jpg)
 
 ![home-assistant!](/bilder/home-assistant-Dashboards.jpg)
 
-![home-assistant!](/bilder/home-assistantEnergie.jpg)
+![home-assistant!](/bilder/home-assistant-Dashboards_hinzuf%C3%BCgen.jpg)
+
+![home-assistant!](/bilder/home-assistant-Dashboards_gasverbrauch.jpg)
+
+![home-assistant!](/bilder/home-assistant-Dashboards_gasincubicmeter.jpg)
