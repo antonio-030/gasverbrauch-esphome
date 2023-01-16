@@ -114,10 +114,9 @@ Es kann gefunden werden, indem Sie auf Einstellungen in der Seitenleiste und dan
 
 ![homeassistant!](/bilder/home-assistantFileEditor_insat.jpg)
 
-Wenn Sie den Datei-Editor nicht in der Liste der offiziellen Add-Ons sehen können, müssen Sie möglicherweise den erweiterten Modus aktivieren .
+Wenn Sie den Datei-Editor nicht in der Liste der offiziellen Add-Ons sehen können, müssen Sie möglicherweise den erweiterten Modus aktivieren.
 
 ![homeassistant!](/bilder/home-assistant_erweiterter_modus.jpg)
-
 
 Füge den Code Ihrer ``configuration.yaml`` hinzu.
 
