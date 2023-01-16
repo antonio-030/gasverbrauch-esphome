@@ -112,7 +112,7 @@ Es kann gefunden werden, indem Sie auf Einstellungen in der Seitenleiste und dan
 
 ![homeassistant!](/bilder/home-assistantFileEditor_store.jpg)
 
-![homeassistant!](/bilder/home-assistantFileEditor_insat.jpg)
+![homeassistant!](/bilder/home-assistantFileEditor_install.jpg)
 
 Wenn Sie den Datei-Editor nicht in der Liste der offiziellen Add-Ons sehen können, müssen Sie möglicherweise den erweiterten Modus aktivieren.
 
