@@ -1,0 +1,58 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+  
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+  
+
+# Text to speech
+tts:
+- platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'date_time_utc'
+      - 'date_time_iso'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
+
+  - platform: template 
+    sensors:
+      # Gaszähler, kommend von ESPHome, aufbereiten für Energy
+      gasincubicmeter:
+        value_template: >
+          {% if states('sensor.gasverbrauch') | float == 0 %}
+           {{ states('sensor.gasincubicmeter') }}
+          {% else %}
+           {{ states('sensor.gasverbrauch') | float }}
+          {% endif %}
+        unit_of_measurement: m³
+        device_class: gas
+        attribute_templates:
+          state_class: total_increasing
+                  
+  # Example configuration.yaml entry
+  - platform: dwd_weather_warnings
+    name: Wetterwarnung Berlin
+    region_name: 111000000
+    #region_name: 995000000
+
+
+# Custom Panels
+panel_custom:
+  - name: Supervisor
+    url_path: hassio/system # url_path needs to be unique for each panel_custom config
+    sidebar_title: Supervisor
+    sidebar_icon: mdi:home-assistant # https://materialdesignicons.com/
+    module_url: /local/panel-redirect.js # 'local' is '/config/www/'
+  
