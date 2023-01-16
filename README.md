@@ -119,7 +119,7 @@ Wenn Sie den Datei-Editor nicht in der Liste der offiziellen Add-Ons sehen könn
 ![homeassistant!](/bilder/home-assistant_erweiterter_modus.jpg)
 
 
-Füge den Code deiner ``configuration.yaml`` hinzu.
+Füge den Code Ihrer ``configuration.yaml`` hinzu.
 
 ````yaml
   - platform: template 
