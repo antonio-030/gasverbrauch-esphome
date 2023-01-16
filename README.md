@@ -98,9 +98,28 @@ In der Zusammenfassung, der Code zählt die Impulse die von einem Gaszähler kom
 
 ![esphome-logsGas!](/bilder/esphome-logsGas.jpg)
 
+9. Schließen Sie den Reed-Kontakt an den Gaszähler an. 
+
+![Gaszahler!](/bilder/Gaszähler.jpg)
+
 <h1 align="center">"Home Assistant"</h1>
 
-![home-assistant!](/bilder/gaszählerstand.jpg)
+Um Dateien mit dem integrierten Dateieditor zu bearbeiten, müssen Sie ihn zuerst aus dem Add-Ons Store installieren.
+
+Es kann gefunden werden, indem Sie auf Einstellungen in der Seitenleiste und dann auf die Registerkarte Add-On-Store klicken , gefolgt von der Add-On-Store- Schaltfläche unten rechts auf dem Bildschirm.
+
+![homeassistant!](/bilder/home-assistantFileEditor_Addons.jpg)
+
+![homeassistant!](/bilder/home-assistantFileEditor_store.jpg)
+
+![homeassistant!](/bilder/home-assistantFileEditor_insat.jpg)
+
+Wenn Sie den Datei-Editor nicht in der Liste der offiziellen Add-Ons sehen können, müssen Sie möglicherweise den erweiterten Modus aktivieren .
+
+![homeassistant!](/bilder/home-assistant_erweiterter_modus.jpg)
+
+
+Füge den Code deiner ``configuration.yaml`` hinzu.
 
 ````yaml
   - platform: template 
@@ -118,4 +137,6 @@ In der Zusammenfassung, der Code zählt die Impulse die von einem Gaszähler kom
         attribute_templates:
           state_class: total_increasing
 ````
-Dieser Code definiert einen weiteren Template-Sensor, der den Gasverbrauch in Kubikmetern anzeigt. Der Sensor hat einen Namen "gasincubicmeter" und verwendet eine Bedingung, um zu entscheiden, welchen Wert er verwendet, um den Gasverbrauch anzuzeigen. Wenn der Wert des Sensors "sensor.gasverbrauch" gleich 0 ist, wird der Wert des Sensors "sensor.gasincubicmeter" verwendet. Andernfalls wird der Wert des Sensors "sensor.gasverbrauch" verwendet. Der Sensor hat auch eine Einheit "m³" und eine Klasse "gas" und eine Klasse "total_increasing" und zeigt den Wert des Sensors entsprechend an.          
+Dieser Code definiert einen weiteren Template-Sensor, der den Gasverbrauch in Kubikmetern anzeigt. Der Sensor hat einen Namen "gasincubicmeter" und verwendet eine Bedingung, um zu entscheiden, welchen Wert er verwendet, um den Gasverbrauch anzuzeigen. Wenn der Wert des Sensors "sensor.gasverbrauch" gleich 0 ist, wird der Wert des Sensors "sensor.gasincubicmeter" verwendet. Andernfalls wird der Wert des Sensors "sensor.gasverbrauch" verwendet. Der Sensor hat auch eine Einheit "m³" und eine Klasse "gas" und eine Klasse "total_increasing" und zeigt den Wert des Sensors entsprechend an.   
+
+![home-assistant!](/bilder/gaszählerstand.jpg)
