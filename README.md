@@ -18,7 +18,7 @@ Gasverbrauch in ESPHome und Home Assistant
 
 ![Wemos-D1!](/bilder/reed-kontakt.jpg)
 
-2.Verbinde den Reed-Kontakt-Sensor mit dem WeMos D1 Mini ESP8266 nach dem Schaltplan. In der Regel sind die Anschlüsse `D1 mit GND`, zu verbinden.
+2.Verbinde den Reed-Kontakt-Sensor mit dem WeMos D1 Mini ESP8266 nach dem Schaltplan. In der Regel sind die Anschlüsse `D1 und GND`, zu verbinden.
 
 ![reedkontakt!](/bilder/reedkontakt_Steckplatine.jpg)
 
