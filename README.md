@@ -120,6 +120,8 @@ Wenn Sie den Datei-Editor nicht in der Liste der offiziellen Add-Ons sehen könn
 
 Füge den Code Ihrer ``configuration.yaml`` hinzu.
 
+![home-assistant!](/bilder/esphome-fileEditor.jpg)
+
 ````yaml
   - platform: template 
     sensors:
@@ -138,7 +140,7 @@ Füge den Code Ihrer ``configuration.yaml`` hinzu.
 ````
 Dieser Code definiert einen weiteren Template-Sensor, der den Gasverbrauch in Kubikmetern anzeigt. Der Sensor hat einen Namen "gasincubicmeter" und verwendet eine Bedingung, um zu entscheiden, welchen Wert er verwendet, um den Gasverbrauch anzuzeigen. Wenn der Wert des Sensors "sensor.gasverbrauch" gleich 0 ist, wird der Wert des Sensors "sensor.gasincubicmeter" verwendet. Andernfalls wird der Wert des Sensors "sensor.gasverbrauch" verwendet. Der Sensor hat auch eine Einheit "m³" und eine Klasse "gas" und eine Klasse "total_increasing" und zeigt den Wert des Sensors entsprechend an.   
 
-![home-assistant!](/bilder/esphome-fileEditor.jpg)
+
 
 <h1 align="center">"Home Assistant Energie"</h1>
 
