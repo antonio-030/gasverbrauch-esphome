@@ -98,7 +98,7 @@ In der Zusammenfassung, der Code zählt die Impulse die von einem Gaszähler kom
 
 ![esphome-logsGas!](/bilder/esphome-logsGas.jpg)
 
-<h2 align="center">"Home Assistant"</h2>
+<h1 align="center">"Home Assistant"</h1>
 
 ![home-assistant!](/bilder/gaszählerstand.jpg)
 
