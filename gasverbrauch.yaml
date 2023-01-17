@@ -1,0 +1,100 @@
+esphome:
+  name: "gasverbrauch"
+
+esp8266:
+  board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  services:
+    - service: setze_gesamtanzahl_impulse ## hier kann der Gaszählerstand mit einem Service Call gesetzt werden, z.B 23,34 m³ sind 2334
+      variables:
+        gesamtanzahl_impulse_ha: int
+      then:
+        - globals.set:
+            id: total_pulses_2
+            value: !lambda 'return gesamtanzahl_impulse_ha;'
+
+  encryption:
+    key: "u4+0s/DQC+JUYlCzrsvqk9UPHO4ldsD+ZL9Sw4XTrD0="
+ota:
+  password: "9ba0e241b5abc8uxe0bc152d71ea608d"
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Web-288565"
+    password: "nXOkq7g8PfIx"
+      
+captive_portal:
+globals:
+  - id: total_pulses
+    type: int
+    restore_value: false
+    initial_value: '0' 
+
+  - id: total_pulses_2
+    type: int
+    restore_value: false
+    initial_value: '934397'  # hier kann der Gaszählerstand initialisiert werden  
+binary_sensor:
+  - platform: gpio
+    id: internal_pulse_counter
+    pin:
+      number: GPIO5
+      mode: INPUT_PULLUP
+    name: "Live-Impuls"
+    filters:
+      - delayed_on: 10ms
+    on_press:
+      then:
+        - lambda: id(total_pulses) += 1;
+        - output.turn_off: led  # optional: für eine LED, die den Gaszählerpuls visualisiert
+    on_release:
+      then:
+        - output.turn_on: led  # optional: für eine LED, die den Gaszählerpuls visualisiert
+
+  - platform: gpio
+    id: internal_pulse_counter_2
+    pin:
+      number: GPIO5
+      mode: INPUT_PULLUP
+    name: "Live-Impuls_2"
+    filters:
+      - delayed_on: 10ms
+    on_press:
+      then:
+        - lambda: id(total_pulses_2) += 1;
+
+sensor:
+  - platform: template
+    name: "Gasverbrauch"
+    device_class: gas
+    unit_of_measurement: "m³"
+    state_class: "total_increasing"
+    icon: "mdi:fire"
+    accuracy_decimals: 2
+    lambda: |-
+      return id(total_pulses) * 0.01;
+
+  - platform: template
+    name: "gaszahlerstand"
+    device_class: gas
+    unit_of_measurement: "m³"
+    state_class: "total_increasing"
+    icon: "mdi:fire"
+    accuracy_decimals: 2
+    lambda: |-
+      return id(total_pulses_2) * 0.01;      
+# Optional: Diese LED soll blinken, sobald ein Signal vom Gaszähler erkannt wird
+output:
+  - platform: gpio
+    pin: GPIO0
+    id: 'led'
