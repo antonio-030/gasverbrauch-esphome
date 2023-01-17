@@ -3,6 +3,9 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=antonio-030&label=Profile%20views&color=0e75b6&style=flat" alt="gasverbrauch-esphome" /> </p>
 
+![visitor](https://visitor-badge.glitch.me/badge?page_id=antonio-030.gasverbrauch-esphome)
+
+
 - 📫 So erreichen Sie mich ctoni030@proton.me
 
 
