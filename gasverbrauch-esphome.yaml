@@ -19,9 +19,9 @@ api:
             value: !lambda 'return gesamtanzahl_impulse_ha;'
 
   encryption:
-    key: "u4+0s/DQC+JUYlCzrsvqk9UPHO4ldsD+ZL9Sw4XTrD0="
+    key: !secret api_encryption_key
 ota:
-  password: "9ba0e241b5abc8uxe0bc152d71ea608d"
+  password: !secret ota_password
 
 
 wifi:
@@ -30,8 +30,8 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Esphome-Web-288565"
-    password: "nXOkq7g8PfIx"
+    ssid: !secret fallback_ap_ssid
+    password: !secret fallback_ap_password
       
 captive_portal:
 globals:
